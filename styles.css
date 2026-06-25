@@ -1,0 +1,125 @@
+        body {
+            background: #000;
+            background-repeat: repeat-x;
+            -webkit-background-size: 100%;
+            -moz-background-size: 100%;
+            -o-background-size: 100%;
+            background-size: 100%;
+            background-position: center bottom;
+            background-repeat: no-repeat;
+            color: white;
+            font-family: sans-serif;
+            text-align: center;
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .viewer {
+            font-family: monospace;
+            white-space: nowrap;
+            line-height: 1;
+            width: fit-content;
+            height: fit-content;
+            font-size: 2em;
+            color: #fff;
+            margin-left: auto;
+            margin-right: auto;
+            scale: 1.59;isolation: isolate;
+        }
+
+        .viewer span {
+            display: inline-block;
+            width: fit-content;
+            height: calc(1ch + 15.4px) !important;
+            mix-blend-mode: plus-lighter;
+            vertical-align: bottom;
+            padding: 0;
+            margin: 0;
+
+            & * {
+                width: 1ch !important;
+                height: 2ch !important;
+                display: block;
+            }
+        }
+
+        canvas,
+        video {
+            image-rendering: pixelated;
+        }
+
+        .vwrapper {
+            width: 100vw !important;
+            height: 100vh !important;
+            position: absolute;
+            top: 5vh;
+            background-color: #000;
+            margin-left:auto;
+            margin-right: auto;
+            display: flex;
+        }
+        canvas{
+            width: 100vw !important;
+            height: 100vh !important;
+            object-fit: contain;
+        }
+        main:has(.to) canvas{
+            position: absolute;
+            top: -1000px;
+            opacity: 0;
+        }
+
+        .vwrapper{
+            z-index: 1;
+            overflow: hidden;
+
+        }
+        .toolbar {
+
+            z-index: 2;
+            /* Rectangle 96 */
+
+            box-sizing: border-box;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            ;
+            bottom: 0px;
+
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            gap: 16px;
+            padding: 16px;
+
+            & button {                &.red{
+                    background: linear-gradient(0deg, rgba(255, 61, 61, 0.6), rgba(255, 61, 61, 0.6)), rgba(217, 217, 217, 0.7);
+                }
+                &.green{
+                    & span{
+                        font-size: 40px !important;
+                    }
+                    background: linear-gradient(0deg, rgba(61, 255, 113, 0.6), rgba(61, 255, 113, 0.6)), rgba(217, 217, 217, 0.7);
+                }
+                &.blue{
+                    background: linear-gradient(0deg, rgba(61, 77, 255, 0.6), rgba(61, 77, 255, 0.6)), rgba(217, 217, 217, 0.7);
+                }
+                backdrop-filter: blur(10.08px);
+                border: 8px solid rgba(217, 217, 217, 70%);
+                border-radius: 100%;
+                aspect-ratio: 1/1;
+                width: 102px;
+                color: rgba(255,255,255,70%);
+                & span:not(:is(.green span)){
+                    font-size: 70px !important;
+
+                }
+            }
+
+
+        }
